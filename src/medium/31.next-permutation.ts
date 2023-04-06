@@ -1,4 +1,4 @@
-import { swap } from "./utils/swap";
+import { swap } from '../utils/swap';
 
 function nextPermutation(nums: number[]): void {
     let index = -1;
@@ -21,10 +21,9 @@ function nextPermutation(nums: number[]): void {
     }
     const needReverseItems = nums.splice(index + 1, size - index + 1);
     nums.splice(index + 1, 0, ...needReverseItems.reverse());
-};
+}
 
-
-const nums = [1,3,2];
+const nums = [1, 3, 2];
 
 nextPermutation(nums);
 

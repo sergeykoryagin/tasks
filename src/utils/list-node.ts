@@ -1,31 +1,31 @@
-export class ListNode {
-    val: number;
-    next: ListNode | null;
+export class ListNode<T = number> {
+    val: T;
+    next: ListNode<T> | null;
 
-    constructor(val?: number, next?: ListNode | null) {
-        this.val = (val === undefined ? 0 : val);
-        this.next = (next===undefined ? null : next);
+    constructor(val: T, next?: ListNode<T> | null) {
+        this.val = val;
+        this.next = next === undefined ? null : next;
     }
 
-    static fromArray(arr: number[]): ListNode | null {
+    static fromArray<T>(arr: T[]): ListNode<T> | null {
         if (arr.length === 0) {
             return null;
         }
-        const list = new ListNode(arr[0]);
+        const list = new ListNode<T>(arr[0]);
         let current = list;
         for (let i = 1; i < arr.length; i++) {
-            current.next = new ListNode(arr[i]);
+            current.next = new ListNode<T>(arr[i]);
             current = current.next;
         }
         return list;
     }
 
-    static print(list: ListNode | null, printFn = console.log): void {
+    static print<T>(list: ListNode<T> | null, printFn = console.log): void {
         if (!list) {
             return printFn('The list is empty');
         }
-        let current: ListNode | null = list;
-        let printResult: string[] = [];
+        let current: ListNode<T> | null = list;
+        const printResult: string[] = [];
         while (current) {
             const hasNext = !!current.next;
             const result = `${current.val}${hasNext ? '->' : ''}`;
@@ -35,4 +35,3 @@ export class ListNode {
         printFn(`${printResult.join('')}\n`);
     }
 }
-

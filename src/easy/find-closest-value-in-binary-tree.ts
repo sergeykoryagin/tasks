@@ -1,29 +1,12 @@
-export class TreeNode {
-    constructor(
-        public val = 0,
-        public left: TreeNode | null = null,
-        public right: TreeNode | null = null
-    ) {}
-}
+import { TreeNode } from '../utils/tree-node';
 
 const tree = new TreeNode(
     10,
-    new TreeNode(
-        5,
-        new TreeNode(
-            2,
-            new TreeNode(1)
-        ),
-        new TreeNode(5),
-    ),
+    new TreeNode(5, new TreeNode(2, new TreeNode(1)), new TreeNode(5)),
     new TreeNode(
         15,
-        new TreeNode(
-            13,
-            null,
-            new TreeNode(14)
-        ),
-        new TreeNode(22)
+        new TreeNode(13, null, new TreeNode(14)),
+        new TreeNode(22),
     ),
 );
 
@@ -50,7 +33,10 @@ const tree = new TreeNode(
 // };
 
 // T O(log(N)) | S O(1)
-const findClosestValueInBinaryTree = (tree: TreeNode, target: number): number => {
+const findClosestValueInBinaryTree = (
+    tree: TreeNode,
+    target: number,
+): number => {
     let currentNode: TreeNode | null = tree;
     let closest = Infinity;
     while (currentNode) {
@@ -72,4 +58,4 @@ const findClosestValueInBinaryTree = (tree: TreeNode, target: number): number =>
 
 const closest = findClosestValueInBinaryTree(tree, 19);
 
-console.log(closest)
+console.log(closest);

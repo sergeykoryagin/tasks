@@ -1,4 +1,4 @@
-import { ListNode } from './utils/list-node';
+import { ListNode } from '../utils/list-node';
 
 const deleteMiddleHelper = (
     node: ListNode | null,

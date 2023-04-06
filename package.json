@@ -10,7 +10,7 @@
     "typescript": "^4.8.2"
   },
   "scripts": {
-    "start": "ts-node src/338.counting-bits.ts"
+    "start": "ts-node src/contest/max-reward.ts"
   },
   "devDependencies": {
     "eslint-config-prettier": "^8.8.0",
