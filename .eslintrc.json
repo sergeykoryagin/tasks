@@ -15,13 +15,11 @@
         "sourceType": "module"
     },
     "plugins": [
-        "@typescript-eslint"
+        "@typescript-eslint",
+        "prettier"
     ],
     "rules": {
-        "indent": [
-            "error",
-            4
-        ],
+        "prettier/prettier": "error",
         "linebreak-style": "off",
         "quotes": [
             "error",
