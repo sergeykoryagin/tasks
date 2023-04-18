@@ -19,7 +19,12 @@
         "prettier"
     ],
     "rules": {
-        "prettier/prettier": "error",
+        "prettier/prettier": [
+            "error",
+            {
+                "endOfLine": "auto"
+            }
+        ],
         "linebreak-style": "off",
         "quotes": [
             "error",

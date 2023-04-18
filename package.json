@@ -9,7 +9,7 @@
     "typescript": "^4.8.2"
   },
   "scripts": {
-    "start": "ts-node src/easy/415.add-strings.ts"
+    "start": "ts-node ./src/hard/right-smaller-than.ts"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.57.1",
